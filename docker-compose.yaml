@@ -2,7 +2,8 @@ version: "3.8"
 
 services:
   api:
-    build: ./api
+    build: .
+    entrypoint: .docker/api.sh
     container_name: imersao-fullcycle-3-desafio-2-api
     ports:
       - 3000:3000
@@ -12,7 +13,8 @@ services:
       - 'host.docker.internal:172.17.0.1'
 
   frontend:
-    build: ./frontend
+    build: .
+    entrypoint: .docker/frontend.sh
     container_name: imersao-fullcycle-3-desafio-2-frontend
     ports:
       - 3001:3000
