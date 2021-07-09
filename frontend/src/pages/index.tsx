@@ -38,8 +38,6 @@ const RoutesListPage: NextPage<IRoutesListPageProps> = ({ routes }) => {
 }
 
 export const getServerSideProps: GetServerSideProps<IRoutesListPageProps> = async () => {
-  console.log(process.env.NEXT_PUBLIC_API_URL);
-  
   const { data: routes } = await axios.get<IRoute[]>('routes');
 
   return { props: { routes } };
