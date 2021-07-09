@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  api:
+    build: ./api
+    container_name: imersao-fullcycle-3-desafio-2-api
+    ports:
+      - 3000:3000
+    volumes:
+      - ./api:/home/node/app
+    extra_hosts: 
+      - 'host.docker.internal:172.17.0.1'
+
+  frontend:
+    build: ./frontend
+    container_name: imersao-fullcycle-3-desafio-2-frontend
+    ports:
+      - 3001:3000
+    volumes:
+      - ./frontend:/home/node/app
+    extra_hosts: 
+      - 'host.docker.internal:172.17.0.1'
