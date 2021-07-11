@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: gabrielkim13/imersao-fullcycle-3-desafio-3-frontend
+          volumeMounts:
+            - name: frontend-volume
+              mountPath: /home/node/app/.env
+              subPath: .env
+          ports:
+            - containerPort: 3000
+
+      volumes:
+        - name: frontend-volume
+          configMap:
+            name: frontend-configmap
+            items:
+              - key: env
+                path: .env

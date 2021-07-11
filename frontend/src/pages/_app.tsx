@@ -25,7 +25,7 @@ export default function MyApp(props: AppProps) {
   return (
     <React.Fragment>
       <Head>
-        <title>Imersão Full Cycle 3 - Desafio 2</title>
+        <title>Imersão Full Cycle 3 - Desafio 3</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
 

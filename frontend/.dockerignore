@@ -1,0 +1,8 @@
+.docker
+.next
+node_modules
+.env
+.gitignore
+.prettierrc
+Dockerfile
+README.md
